@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://bioclean.ru/sitemap.xml
+Host: bioclean.ru
