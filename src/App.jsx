@@ -170,7 +170,7 @@ function FAQItem({ q, a }) {
   );
 }
 
-function Home() {
+export function Home() {
   const [leadForm, setLeadForm] = useState({
     name: "",
     company: "",
@@ -409,11 +409,11 @@ function Home() {
   <>
     <Helmet>
       <title>
-        Учет спецодежды и СИЗ на предприятии — программа BioClean Workwear
+        Программа учета спецодежды и СИЗ для предприятий — BioClean
       </title>
       <meta
         name="description"
-        content="Программа учета спецодежды и СИЗ для предприятия. Выдача сотрудникам, нормы выдачи, контроль сроков эксплуатации, складской учет, отчеты и планирование закупок."
+        content="Программа учета спецодежды и СИЗ для предприятий. Учет выдачи сотрудникам, контроль сроков эксплуатации, складской учет и планирование закупок."
       />
       <link rel="canonical" href="https://bioclean.ru/" />
     </Helmet>
