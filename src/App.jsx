@@ -219,9 +219,10 @@ function Home() {
     () => [
       { label: "Кому подходит", href: "#audience" },
       { label: "Возможности", href: "#features" },
+      { label: "Интерфейсы", href: "#screens" },
       { label: "Эффект", href: "#roi" },
       { label: "Закупки", href: "#procurement" },
-      { label: "Попробовать", href: "#trial" },
+      { label: "Внедрение", href: "#demo" },
       { label: "Тарифы", href: "#pricing" },
       { label: "FAQ", href: "#faq" },
     ],
@@ -251,14 +252,19 @@ function Home() {
         text: "Формируйте план заказа по данным выдачи и срокам. Закупки становятся прогнозируемыми, без лишних запасов.",
       },
       {
+        icon: HardHat,
+        title: "Нормы выдачи",
+        text: "Настраивайте нормы по должностям и службам, проверяйте обеспеченность сотрудников и быстро видьте, чего не хватает.",
+      },
+      {
+        icon: ShieldCheck,
+        title: "Резервные копии",
+        text: "Ежедневное резервное копирование снижает риск потери данных и помогает спокойнее вести учет в рабочем режиме.",
+      },
+      {
         icon: ShieldCheck,
         title: "Учет СИЗ",
         text: "Ведите учет СИЗ вместе со спецодеждой: единая логика, единые отчеты, меньше ручной работы.",
-      },
-      {
-        icon: HardHat,
-        title: "Гибкая настройка",
-        text: "Нормы выдачи могут быть разными — мы поддерживаем конфигурацию под предприятие и роли пользователей.",
       },
     ],
     [],
@@ -274,6 +280,42 @@ function Home() {
     [],
   );
 
+  const interfaceScreens = useMemo(
+    () => [
+      {
+        title: "Сотрудники и карточки",
+        text: "Список сотрудников с должностями, службами и переходом к карточке работника.",
+        image: "/screenshots/employees.png",
+      },
+      {
+        title: "Нормы выдачи",
+        text: "Нормы по должностям и службам: состав комплекта, количество и срок эксплуатации.",
+        image: "/screenshots/issue-norms.png",
+      },
+      {
+        title: "Выдача спецодежды",
+        text: "Оформление выдачи, проверка доступных остатков и фиксация истории по сотруднику.",
+        image: "/screenshots/issue-form.png",
+      },
+      {
+        title: "Остатки на складе",
+        text: "Контроль размеров, ростов, количества и движения позиций по складу.",
+        image: "/screenshots/stock-balance.png",
+      },
+      {
+        title: "Обеспеченность СИЗ",
+        text: "Отчет показывает, какие позиции положены сотруднику и что уже выдано.",
+        image: "/screenshots/siz-coverage.png",
+      },
+      {
+        title: "Отчет для заказа",
+        text: "Потребность по спецодежде формируется на основе норм, остатков и выдачи.",
+        image: "/screenshots/order-report.png",
+      },
+    ],
+    [],
+  );
+
   const pricing = useMemo(
     () => [
       {
@@ -283,9 +325,11 @@ function Home() {
         bullets: [
           "учет выдачи",
           "контроль сроков эксплуатации",
+          "нормы выдачи",
           "складские остатки",
           "отчеты",
         ],
+        cta: "Обсудить Start",
       },
       {
         name: "Standard",
@@ -295,8 +339,11 @@ function Home() {
           "все функции Start",
           "планирование закупок",
           "импорт Excel",
+          "ежедневные резервные копии",
           "поддержка",
         ],
+        featured: true,
+        cta: "Запросить демо",
       },
       {
         name: "Pro",
@@ -305,14 +352,22 @@ function Home() {
         bullets: [
           "все функции Standard",
           "расширенные отчеты",
+          "отчеты по обеспеченности",
           "приоритетная поддержка",
         ],
+        cta: "Обсудить Pro",
       },
       {
         name: "Enterprise",
         price: "по запросу",
         desc: "1000+ сотрудников",
-        bullets: ["индивидуальная настройка", "локальная установка", "SLA"],
+        bullets: [
+          "индивидуальная настройка",
+          "локальная установка",
+          "расширенные права доступа",
+          "SLA",
+        ],
+        cta: "Обсудить внедрение",
       },
     ],
     [],
@@ -325,8 +380,8 @@ function Home() {
         a: "Основной формат — SaaS. По запросу возможна версия для работы в локальной сети/внутреннем контуре (Enterprise).",
       },
       {
-        q: "Есть ли пробный период?",
-        a: "Да, можно включить trial на 30 дней (или больше для пилота) — чтобы вы проверили процесс на реальных данных.",
+        q: "Как лучше начать знакомство с системой?",
+        a: "Начните с демо: покажем интерфейс, нормы выдачи, отчеты и сценарии по вашим данным. Если нужен пилот, согласуем формат отдельно.",
       },
       {
         q: "Можно ли загрузить сотрудников и позиции из Excel?",
@@ -334,11 +389,15 @@ function Home() {
       },
       {
         q: "Нормы выдачи у нас сложные — это поддерживается?",
-        a: "Да. Нормы зависят от предприятия, поэтому предусмотрена гибкая настройка. Если у вас есть специфика — настроим или добавим модуль.",
+        a: "Да. Нормы выдачи уже реализованы: можно вести нормы по должностям и службам, контролировать обеспеченность и формировать потребность.",
       },
       {
         q: "Какие отчеты есть?",
-        a: "Отчет по выдаче, планирование заказа/закупки на основании данных и сроков эксплуатации. Дополнительные отчеты можно добавить.",
+        a: "Есть отчеты по выдаче, обеспеченности СИЗ и заказу спецодежды на основании норм, остатков и сроков эксплуатации.",
+      },
+      {
+        q: "Что с сохранностью данных?",
+        a: "В системе предусмотрено ежедневное резервное копирование. Это помогает снизить риск потери данных и спокойнее вести регулярный учет.",
       },
     ],
     [],
@@ -352,7 +411,7 @@ function Home() {
       </title>
       <meta
         name="description"
-        content="Программа учета спецодежды и СИЗ для предприятия. Выдача сотрудникам, контроль сроков эксплуатации, складской учет и планирование закупок. 30 дней бесплатно."
+        content="Программа учета спецодежды и СИЗ для предприятия. Выдача сотрудникам, нормы выдачи, контроль сроков эксплуатации, складской учет, отчеты и планирование закупок."
       />
       <link rel="canonical" href="https://bioclean.ru/" />
     </Helmet>
@@ -392,7 +451,7 @@ function Home() {
                 className="bg-emerald-600 hover:bg-emerald-700 active:bg-emerald-800"
                 onClick={() => setDemoOpen(true)}
               >
-                Начать бесплатно <ArrowRight size={16} />
+                Запросить демо <ArrowRight size={16} />
               </Button>
             </div>
           </div>
@@ -405,10 +464,10 @@ function Home() {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_10%,rgba(21,101,192,0.12),transparent_35%),radial-gradient(circle_at_80%_0%,rgba(76,175,80,0.12),transparent_30%)]" />
 
         <Container className="relative py-12 sm:py-16">
-          <div className="grid lg:grid-cols-2 gap-10 items-center">
+          <div className="grid lg:grid-cols-2 gap-10 items-start">
             <div>
               <div className="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-sm text-slate-600">
-                SaaS для предприятий, производства и строительства
+                SaaS для охраны труда, склада и закупок
               </div>
 
               <motion.h1
@@ -432,8 +491,8 @@ function Home() {
               >
                 BioClean Workwear — программа учета спецодежды и СИЗ для
                 предприятий. Контролируйте выдачу сотрудникам, сроки
-                эксплуатации, складские остатки и планирование закупок в одной
-                системе.
+                эксплуатации, нормы выдачи, складские остатки и планирование
+                закупок в одной системе.
               </motion.p>
 
               <div className="mt-6 grid gap-3 sm:grid-cols-2">
@@ -447,7 +506,7 @@ function Home() {
                   Учет СИЗ и складских остатков
                 </div>
                 <div className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-700">
-                  Планирование закупок спецодежды и СИЗ
+                  Нормы выдачи, отчеты и планирование закупок
                 </div>
               </div>
 
@@ -457,7 +516,7 @@ function Home() {
                   className="bg-emerald-600 hover:bg-emerald-700 active:bg-emerald-800"
                   onClick={() => setDemoOpen(true)}
                 >
-                  Начать бесплатно
+                  Запросить демо
                 </Button>
 
                 <Button
@@ -473,15 +532,15 @@ function Home() {
               </div>
 
               <div className="mt-4 flex flex-wrap gap-x-6 gap-y-2 text-sm text-slate-500">
-                <span>30 дней бесплатно</span>
-                <span>Быстрый старт</span>
-                <span>Подходит для предприятий любого размера</span>
+                <span>Демо по вашим сценариям</span>
+                <span>Нормы выдачи уже в системе</span>
+                <span>Ежедневные резервные копии</span>
               </div>
 
               <div className="mt-8 grid grid-cols-2 sm:grid-cols-3 gap-3">
                 <Stat label="Быстрый старт" value="5 минут" />
                 <Stat label="Подходит для" value="до 1000+" />
-                <Stat label="Trial период" value="30 дней" />
+                <Stat label="Backup данных" value="каждый день" />
               </div>
             </div>
 
@@ -502,7 +561,7 @@ function Home() {
                 </div>
 
                 <img
-                  src="/app-screenshot.png"
+                  src="/screenshots/issue-form.png"
                   alt="Программа учета спецодежды и СИЗ"
                   className="w-full h-auto block"
                 />
@@ -527,12 +586,12 @@ function Home() {
                   <CardHeader className="pb-0">
                     <div className="flex items-center gap-2 text-sm font-semibold">
                       <Package size={16} className="text-emerald-600" />
-                      План закупки
+                      Нормы выдачи
                     </div>
                   </CardHeader>
                   <CardContent className="pt-3">
                     <div className="text-sm text-slate-600">
-                      Планируйте закупки автоматически.
+                      Проверяйте комплекты по должности и службе.
                     </div>
                   </CardContent>
                 </Card>
@@ -669,17 +728,59 @@ function Home() {
             <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
               <div>
                 <div className="text-lg font-semibold">
-                  Excel-импорт и экспорт уже есть
+                  Нормы выдачи, Excel и ежедневный backup уже есть
                 </div>
                 <div className="mt-1 text-sm text-slate-600">
-                  Быстро переносите данные из текущих таблиц и выгружайте
-                  отчеты. При необходимости добавим импорт из ваших шаблонов.
+                  Переносите данные из текущих таблиц, ведите нормы выдачи,
+                  выгружайте отчеты и сохраняйте данные через регулярное
+                  резервное копирование.
                 </div>
               </div>
               <Button onClick={() => setDemoOpen(true)}>
                 Получить демо <ArrowRight size={16} />
               </Button>
             </div>
+          </div>
+        </Container>
+      </div>
+
+      {/* Интерфейсы */}
+      <div id="screens" className="py-14">
+        <Container>
+          <SectionTitle
+            eyebrow="Интерфейсы"
+            title="Больше реальных экранов системы"
+            subtitle="Показываем не абстрактные карточки, а рабочие разделы: сотрудники, нормы выдачи, склад, выдача, обеспеченность СИЗ и отчет для заказа."
+          />
+
+          <div className="mt-10 grid lg:grid-cols-3 gap-5">
+            {interfaceScreens.map((screen, index) => (
+              <Card
+                key={screen.title}
+                className={
+                  index === 0 || index === 2
+                    ? "overflow-hidden lg:col-span-2"
+                    : "overflow-hidden"
+                }
+              >
+                <div className="border-b border-slate-100 bg-slate-50 px-4 py-3">
+                  <div className="text-sm font-semibold text-slate-900">
+                    {screen.title}
+                  </div>
+                  <div className="mt-1 text-xs text-slate-500">
+                    {screen.text}
+                  </div>
+                </div>
+                <div className="bg-white p-2">
+                  <img
+                    src={screen.image}
+                    alt={screen.title}
+                    className="block w-full rounded-xl border border-slate-100"
+                    loading="lazy"
+                  />
+                </div>
+              </Card>
+            ))}
           </div>
         </Container>
       </div>
@@ -831,8 +932,8 @@ function Home() {
         <Container>
           <SectionTitle
             eyebrow="Доверие"
-            title="Безопасность и контроль доступа в системе"
-            subtitle="Роли, права, прозрачные данные и удобная работа для разных сотрудников."
+            title="Безопасность, доступы и резервное копирование"
+            subtitle="Роли, прозрачные данные, ежедневные backup-копии и удобная работа для разных сотрудников."
           />
 
           <div className="mt-10 grid lg:grid-cols-3 gap-4">
@@ -843,8 +944,8 @@ function Home() {
             />
             <Feature
               icon={Package}
-              title="Прозрачный склад"
-              text="Остатки и движение по операциям — меньше ошибок и «потерянных» позиций."
+              title="Ежедневные резервные копии"
+              text="Данные сохраняются регулярно, чтобы снизить риск потерь и спокойно вести учет в ежедневной работе."
             />
             <Feature
               icon={Globe}
@@ -870,15 +971,15 @@ function Home() {
         </Container>
       </div>
 
-      {/* Trial */}
+      {/* Внедрение */}
       <div
-        id="trial"
+        id="demo"
         className="py-14 bg-[linear-gradient(to_right,#eff6ff,#ecfdf3)]"
       >
         <Container>
           <SectionTitle
-            title="Попробуйте программу учета спецодежды бесплатно"
-            subtitle="Полный доступ ко всем функциям. Без привязки карты."
+            title="Посмотрите программу на ваших сценариях"
+            subtitle="Покажем нормы выдачи, оформление выдачи, складские остатки, отчеты и резервное копирование на понятном демо."
           />
 
           <div className="mt-6 flex justify-center">
@@ -887,7 +988,7 @@ function Home() {
               className="bg-emerald-600 hover:bg-emerald-700 active:bg-emerald-800"
               onClick={() => setDemoOpen(true)}
             >
-              Начать бесплатный период
+              Запросить демо
             </Button>
           </div>
         </Container>
@@ -899,7 +1000,7 @@ function Home() {
           <SectionTitle
             eyebrow="Тарифы"
             title="Тарифы на систему учета спецодежды"
-            subtitle="Начните с trial. Тарифы можно адаптировать под масштаб предприятия."
+            subtitle="Тарифы можно адаптировать под масштаб предприятия, количество сотрудников и формат внедрения."
           />
 
           <div className="mt-10 grid lg:grid-cols-2 gap-4">
@@ -971,13 +1072,13 @@ function Home() {
                   Запустите учет спецодежды за один день
                 </div>
                 <div className="mt-3 text-white/80 leading-relaxed">
-                  Покажем демо, включим trial и поможем перенести данные из
-                  Excel. Вы получите контроль сроков эксплуатации и план закупок
-                  без ручной рутины.
+                  Покажем демо, разберем ваши нормы выдачи и поможем перенести
+                  данные из Excel. Вы получите контроль сроков эксплуатации,
+                  обеспеченности и план закупок без ручной рутины.
                 </div>
                 <div className="mt-6 flex flex-col sm:flex-row gap-3">
                   <Button size="lg" onClick={() => setDemoOpen(true)}>
-                    Начать использовать <ArrowRight size={16} />
+                    Запросить демо <ArrowRight size={16} />
                   </Button>
                 </div>
               </div>
@@ -1219,7 +1320,7 @@ function Home() {
       <Modal
         open={demoOpen}
         onClose={() => setDemoOpen(false)}
-        title="Запросить демо / включить пробный период"
+        title="Запросить демо"
       >
         <form className="space-y-3" onSubmit={handleLeadSubmit}>
           <Input
