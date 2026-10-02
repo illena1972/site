@@ -96,7 +96,9 @@ function Modal({ open, onClose, title, children }) {
             <div>
               <div className="text-lg font-semibold">{title}</div>
               <div className="mt-1 text-sm text-slate-600">
-                Оставьте контакты — проведем демонстрацию возможностей и ответим на вопросы.
+                Оставьте контакты — проведем демонстрацию возможностей, ответим
+                на вопросы и обсудим пилотный запуск за 50% стоимости первого
+                месяца.
               </div>
             </div>
             <button
@@ -979,7 +981,7 @@ function Home() {
         <Container>
           <SectionTitle
             title="Посмотрите программу на ваших сценариях"
-            subtitle="Покажем нормы выдачи, оформление выдачи, складские остатки, отчеты и резервное копирование на понятном демо."
+            subtitle="Покажем нормы выдачи, оформление выдачи, складские остатки, отчеты и резервное копирование. После демо можно начать с пилотного месяца за 50% стоимости выбранного тарифа."
           />
 
           <div className="mt-6 flex justify-center">
@@ -1320,7 +1322,7 @@ function Home() {
       <Modal
         open={demoOpen}
         onClose={() => setDemoOpen(false)}
-        title="Запросить демо"
+        title="Демо и пилотный запуск"
       >
         <form className="space-y-3" onSubmit={handleLeadSubmit}>
           <Input
