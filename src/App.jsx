@@ -545,7 +545,7 @@ export function Home() {
               initial={{ opacity: 0, y: 18 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.55 }}
-              className="relative"
+              className="relative lg:pt-[52px]"
             >
               <div className="rounded-3xl border border-slate-100 bg-white shadow-soft overflow-hidden">
                 <div className="flex items-center gap-2 px-4 py-3 border-b border-slate-100 bg-slate-50">
