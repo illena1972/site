@@ -737,7 +737,7 @@ function Home() {
                 </div>
               </div>
               <Button onClick={() => setDemoOpen(true)}>
-                Получить демо <ArrowRight size={16} />
+                Запросить демо <ArrowRight size={16} />
               </Button>
             </div>
           </div>
