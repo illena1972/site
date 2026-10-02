@@ -96,7 +96,7 @@ function Modal({ open, onClose, title, children }) {
             <div>
               <div className="text-lg font-semibold">{title}</div>
               <div className="mt-1 text-sm text-slate-600">
-                Оставьте контакты — пришлём доступ к демо и ответим на вопросы.
+                Оставьте контакты — проведем демонстрацию возможностей и ответим на вопросы.
               </div>
             </div>
             <button
