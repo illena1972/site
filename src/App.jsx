@@ -285,9 +285,9 @@ export function Home() {
   const interfaceScreens = useMemo(
     () => [
       {
-        title: "Сотрудники и карточки",
-        text: "Список сотрудников с должностями, службами и переходом к карточке работника.",
-        image: "/screenshots/employees.png",
+        title: "Каталог одежды",
+        text: "Справочник позиций с типами, размерами и быстрым доступом к редактированию.",
+        image: "/screenshots/clothes-catalog.png",
       },
       {
         title: "Нормы выдачи",
@@ -295,9 +295,9 @@ export function Home() {
         image: "/screenshots/issue-norms.png",
       },
       {
-        title: "Выдача спецодежды",
-        text: "Оформление выдачи, проверка доступных остатков и фиксация истории по сотруднику.",
-        image: "/screenshots/issue-form.png",
+        title: "Должности",
+        text: "Справочник должностей помогает связать нормы выдачи с рабочими ролями.",
+        image: "/screenshots/positions.png",
       },
       {
         title: "Остатки на складе",
@@ -305,13 +305,8 @@ export function Home() {
         image: "/screenshots/stock-balance.png",
       },
       {
-        title: "Обеспеченность СИЗ",
-        text: "Отчет показывает, какие позиции положены сотруднику и что уже выдано.",
-        image: "/screenshots/siz-coverage.png",
-      },
-      {
-        title: "Отчет для заказа",
-        text: "Потребность по спецодежде формируется на основе норм, остатков и выдачи.",
+        title: "Планирование заказа",
+        text: "Отчет показывает потребность по размерам и ростам без раскрытия данных сотрудников.",
         image: "/screenshots/order-report.png",
       },
     ],
@@ -563,8 +558,8 @@ export function Home() {
                 </div>
 
                 <img
-                  src="/screenshots/issue-form.png"
-                  alt="Программа учета спецодежды и СИЗ"
+                  src="/screenshots/order-report.png"
+                  alt="Отчет для заказа спецодежды"
                   className="w-full h-auto block"
                 />
               </div>
@@ -755,7 +750,7 @@ export function Home() {
           <SectionTitle
             eyebrow="Интерфейсы"
             title="Больше реальных экранов системы"
-            subtitle="Показываем не абстрактные карточки, а рабочие разделы: сотрудники, нормы выдачи, склад, выдача, обеспеченность СИЗ и отчет для заказа."
+            subtitle="Показываем не абстрактные карточки, а рабочие разделы: каталог, нормы выдачи, должности, склад и отчет для заказа."
           />
 
           <div className="mt-10 grid lg:grid-cols-3 gap-5">
