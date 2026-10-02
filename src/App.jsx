@@ -331,7 +331,7 @@ export function Home() {
           "складские остатки",
           "отчеты",
         ],
-        cta: "Обсудить Start",
+        cta: "Запустить Start",
       },
       {
         name: "Standard",
@@ -345,7 +345,7 @@ export function Home() {
           "поддержка",
         ],
         featured: true,
-        cta: "Запросить демо",
+        cta: "Выбрать Standard",
       },
       {
         name: "Pro",
@@ -357,7 +357,7 @@ export function Home() {
           "отчеты по обеспеченности",
           "приоритетная поддержка",
         ],
-        cta: "Обсудить Pro",
+        cta: "Выбрать Pro",
       },
       {
         name: "Enterprise",
@@ -369,7 +369,7 @@ export function Home() {
           "расширенные права доступа",
           "SLA",
         ],
-        cta: "Обсудить внедрение",
+        cta: "Обсудить Enterprise",
       },
     ],
     [],
