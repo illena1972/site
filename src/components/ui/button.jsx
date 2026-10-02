@@ -3,6 +3,7 @@ import { cn } from "./utils";
 
 const variants = {
   default: "bg-slate-900 text-white hover:bg-slate-800",
+  cta: "bg-emerald-600 text-white hover:bg-emerald-700 active:bg-emerald-800",
   outline: "border border-slate-200 bg-white text-slate-900 hover:bg-slate-50",
   ghost: "text-slate-700 hover:bg-slate-100",
 };

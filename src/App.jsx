@@ -1022,7 +1022,7 @@ export function Home() {
                   <div className="mt-6">
                     <Button
                       className="w-full"
-                      variant={p.featured ? "default" : "outline"}
+                      variant={p.featured ? "cta" : "outline"}
                       onClick={() => setDemoOpen(true)}
                     >
                       {p.cta} <ArrowRight size={16} />
