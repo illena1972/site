@@ -738,7 +738,10 @@ function Home() {
                   резервное копирование.
                 </div>
               </div>
-              <Button onClick={() => setDemoOpen(true)}>
+              <Button
+                className="bg-emerald-600 hover:bg-emerald-700 active:bg-emerald-800"
+                onClick={() => setDemoOpen(true)}
+              >
                 Запросить демо <ArrowRight size={16} />
               </Button>
             </div>
