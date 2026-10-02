@@ -959,20 +959,6 @@ function Home() {
             />
           </div>
 
-          <div className="mt-10 flex flex-col sm:flex-row items-center justify-between gap-4 rounded-3xl border border-slate-200 bg-white p-6 shadow-soft">
-            <div>
-              <div className="font-semibold">
-                Хотите посмотреть демо на ваших сценариях?
-              </div>
-              <div className="mt-1 text-sm text-slate-600">
-                Покажем выдачу, сроки эксплуатации и план закупок на примере
-                вашей структуры.
-              </div>
-            </div>
-            <Button onClick={() => setDemoOpen(true)}>
-              Запросить демо <ArrowRight size={16} />
-            </Button>
-          </div>
         </Container>
       </div>
 
