@@ -293,6 +293,7 @@ export function Home() {
         title: "Нормы выдачи",
         text: "Нормы по должностям и службам: состав комплекта, количество и срок эксплуатации.",
         image: "/screenshots/issue-norms.png",
+        imageClass: "h-[230px] object-cover object-top sm:h-[260px]",
       },
       {
         title: "Должности",
@@ -303,6 +304,7 @@ export function Home() {
         title: "Остатки на складе",
         text: "Контроль размеров, ростов, количества и движения позиций по складу.",
         image: "/screenshots/stock-balance.png",
+        imageClass: "h-[300px] object-cover object-top sm:h-[340px]",
       },
       {
         title: "Планирование заказа",
@@ -775,7 +777,9 @@ export function Home() {
                   <img
                     src={screen.image}
                     alt={screen.title}
-                    className="block w-full rounded-xl border border-slate-100"
+                    className={`block w-full rounded-xl border border-slate-100 ${
+                      screen.imageClass || "h-auto"
+                    }`}
                     loading="lazy"
                   />
                 </div>
