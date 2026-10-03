@@ -28,6 +28,8 @@ const BRAND = {
   tagline: "Учет спецодежды и СИЗ без Excel",
   domainHint: "bioclean.ru / bioclean.app",
   email: "market@bioclean.ru",
+  phone: "+7 (916) 313-32-57",
+  phoneHref: "tel:+79163133257",
   logo: "/bioclean-logo.png",
   telegramUrl: "https://t.me/BiocleanWorkWear_bot?start=landing",
 };
@@ -226,6 +228,7 @@ export function Home() {
       { label: "Закупки", href: "#procurement" },
       { label: "Внедрение", href: "#demo" },
       { label: "Тарифы", href: "#pricing" },
+      { label: "Контакты", href: "#contacts" },
       { label: "FAQ", href: "#faq" },
     ],
     [],
@@ -293,7 +296,6 @@ export function Home() {
         title: "Нормы выдачи",
         text: "Нормы по должностям и службам: состав комплекта, количество и срок эксплуатации.",
         image: "/screenshots/issue-norms.png",
-        imageClass: "h-[230px] object-cover object-top sm:h-[260px]",
       },
       {
         title: "Должности",
@@ -304,7 +306,6 @@ export function Home() {
         title: "Остатки на складе",
         text: "Контроль размеров, ростов, количества и движения позиций по складу.",
         image: "/screenshots/stock-balance.png",
-        imageClass: "h-[300px] object-cover object-top sm:h-[340px]",
       },
       {
         title: "Планирование заказа",
@@ -432,7 +433,7 @@ export function Home() {
               </div>
             </div>
 
-            <div className="hidden md:flex items-center gap-6 text-sm text-slate-700">
+            <div className="hidden lg:flex items-center gap-4 text-sm text-slate-700">
               {nav.map((n) => (
                 <SmoothLink
                   key={n.href}
@@ -444,7 +445,21 @@ export function Home() {
               ))}
             </div>
 
-            <div className="flex items-center">
+            <div className="flex items-center gap-4">
+              <div className="hidden 2xl:flex flex-col items-end leading-tight">
+                <a
+                  href={BRAND.phoneHref}
+                  className="text-sm font-semibold text-slate-900 hover:text-emerald-700"
+                >
+                  {BRAND.phone}
+                </a>
+                <a
+                  href={`mailto:${BRAND.email}`}
+                  className="mt-1 text-xs text-slate-500 hover:text-slate-800"
+                >
+                  {BRAND.email}
+                </a>
+              </div>
               <Button
                 size="md"
                 className="bg-emerald-600 hover:bg-emerald-700 active:bg-emerald-800"
@@ -777,9 +792,7 @@ export function Home() {
                   <img
                     src={screen.image}
                     alt={screen.title}
-                    className={`block w-full rounded-xl border border-slate-100 ${
-                      screen.imageClass || "h-auto"
-                    }`}
+                    className="block w-full rounded-xl border border-slate-100"
                     loading="lazy"
                   />
                 </div>
@@ -1037,23 +1050,8 @@ export function Home() {
         </Container>
       </div>
 
-      {/* FAQ */}
-      <div id="faq" className="py-14 bg-slate-50 border-y border-slate-100">
-        <Container>
-          <SectionTitle
-            eyebrow="FAQ"
-            title="Часто задаваемые вопросы по учету спецодежды"
-          />
-          <div className="mt-10 grid gap-3 max-w-3xl mx-auto">
-            {faqs.map((f) => (
-              <FAQItem key={f.q} q={f.q} a={f.a} />
-            ))}
-          </div>
-        </Container>
-      </div>
-
       {/* FINAL CTA */}
-      <div className="py-14">
+      <div id="contacts" className="py-14">
         <Container>
           <div className="rounded-3xl bg-[linear-gradient(135deg,#0f172a,#164e63,#166534)] text-white p-8 sm:p-10 shadow-soft">
             <div className="grid lg:grid-cols-2 gap-8 items-center">
@@ -1074,18 +1072,50 @@ export function Home() {
               </div>
 
               <div className="rounded-3xl bg-white/5 border border-white/10 p-6">
-                <div className="text-sm font-semibold">Контакты</div>
-                <div className="mt-4 space-y-3 text-sm text-white/85">
-                  <div className="flex items-center gap-2">
+                <div className="text-sm font-semibold text-white/70">
+                  Контакты
+                </div>
+                <div className="mt-2 text-xl font-semibold">
+                  Свяжитесь с BioClean Workwear
+                </div>
+                <div className="mt-2 text-sm leading-relaxed text-white/75">
+                  Ответим на вопросы, покажем демо и подскажем, как перенести
+                  учет спецодежды из Excel.
+                </div>
+                <div className="mt-5 space-y-3 text-sm text-white/90">
+                  <a
+                    href={`mailto:${BRAND.email}`}
+                    className="flex items-center gap-2 hover:text-white"
+                  >
                     <Mail size={16} /> {BRAND.email}
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <Phone size={16} /> +7 (916) 313-32-57
-                  </div>
+                  </a>
+                  <a
+                    href={BRAND.phoneHref}
+                    className="flex items-center gap-2 hover:text-white"
+                  >
+                    <Phone size={16} /> {BRAND.phone}
+                  </a>
                 </div>
               </div>
             </div>
           </div>
+        </Container>
+      </div>
+
+      {/* FAQ */}
+      <div id="faq" className="py-14 bg-slate-50 border-y border-slate-100">
+        <Container>
+          <SectionTitle
+            eyebrow="FAQ"
+            title="Часто задаваемые вопросы по учету спецодежды"
+          />
+          <div className="mt-10 grid gap-3 max-w-3xl mx-auto">
+            {faqs.map((f) => (
+              <FAQItem key={f.q} q={f.q} a={f.a} />
+            ))}
+          </div>
+        </Container>
+      </div>
 
           {/* SEO */}
           <div id="seo" className="py-16">
@@ -1303,8 +1333,6 @@ export function Home() {
               © {new Date().getFullYear()} {BRAND.name}. Все права защищены.
             </div>
           </div>
-        </Container>
-      </div>
 
       {/* DEMO MODAL */}
       <Modal
@@ -1363,10 +1391,10 @@ export function Home() {
               <div>
                 📞{" "}
                 <a
-                  href="tel:+79163133257"
+                  href={BRAND.phoneHref}
                   className="text-blue-600 hover:underline"
                 >
-                  +7 (916) 313-32-57
+                  {BRAND.phone}
                 </a>
               </div>
             </div>
@@ -1401,3 +1429,4 @@ export default function App() {
     </HelmetProvider>
   );
 }
+

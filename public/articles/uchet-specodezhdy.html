@@ -1,130 +1,376 @@
 <!doctype html>
 <html lang="ru">
 <head>
-<meta charset="UTF-8">
-<title>Учет спецодежды на предприятии</title>
-<meta name="description" content="Как вести учет спецодежды на предприятии: выдача, склад, сроки эксплуатации и отчетность.">
-<link rel="canonical" href="https://bioclean.ru/articles/uchet-specodezhdy.html">
-<link rel="icon" href="/favicon.ico" sizes="any">
-    <link rel="icon" type="image/png" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" href="/favicon-64x64.png" sizes="64x64">
-    <link rel="icon" type="image/png" href="/favicon-16x16.png">
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<script type="application/ld+json">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Учет спецодежды на предприятии — выдача, сроки, склад и отчеты</title>
+  <meta
+    name="description"
+    content="Как организовать учет спецодежды на предприятии: выдача сотрудникам, нормы, сроки эксплуатации, складские остатки, отчеты и планирование закупок."
+  />
+  <meta
+    name="keywords"
+    content="учет спецодежды, учет спецодежды на предприятии, выдача спецодежды, склад спецодежды, сроки эксплуатации спецодежды"
+  />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://bioclean.ru/articles/uchet-specodezhdy.html" />
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" href="/favicon-64x64.png" sizes="64x64">
+  <link rel="icon" type="image/png" href="/favicon-16x16.png">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
-{
-"@context":"https://schema.org",
-"@type":"Article",
-"headline":"Программа учета спецодежды",
-"description":"Программа учета спецодежды для предприятий",
-"author":{
-"@type":"Organization",
-"name":"BioClean Workwear"
-},
-"publisher":{
-"@type":"Organization",
-"name":"BioClean Workwear"
-}
-}
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Article",
+    "headline":"Учет спецодежды на предприятии — выдача, сроки, склад и отчеты",
+    "description":"Практическая статья о том, как вести учет спецодежды: нормы выдачи, карточки сотрудников, сроки эксплуатации, складские остатки и отчеты.",
+    "mainEntityOfPage":"https://bioclean.ru/articles/uchet-specodezhdy.html",
+    "author":{
+      "@type":"Organization",
+      "name":"BioClean Workwear"
+    },
+    "publisher":{
+      "@type":"Organization",
+      "name":"BioClean Workwear"
+    }
+  }
+  </script>
 
-</script>
-
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: #0f172a;
+      background: #ffffff;
+      line-height: 1.7;
+    }
+    .topbar {
+      border-bottom: 1px solid #e2e8f0;
+      background: #ffffff;
+    }
+    .topbar-line {
+      height: 2px;
+      background: linear-gradient(to right, #2563eb, #10b981, #2563eb);
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    .header-inner {
+      padding: 20px 0;
+      text-align: center;
+    }
+    .logo {
+      height: 64px;
+      width: auto;
+    }
+    .tagline {
+      margin-top: 8px;
+      font-size: 13px;
+      color: #64748b;
+    }
+    .breadcrumbs {
+      margin-top: 24px;
+      font-size: 14px;
+      color: #64748b;
+    }
+    .breadcrumbs a {
+      color: #64748b;
+      text-decoration: none;
+    }
+    .breadcrumbs a:hover {
+      text-decoration: underline;
+    }
+    h1 {
+      font-size: 40px;
+      line-height: 1.15;
+      margin: 20px 0 16px;
+    }
+    h2 {
+      font-size: 28px;
+      margin: 40px 0 16px;
+    }
+    h3 {
+      font-size: 22px;
+      margin: 28px 0 12px;
+    }
+    p, li {
+      font-size: 18px;
+      color: #334155;
+    }
+    .article {
+      padding: 40px 0 60px;
+    }
+    .lead {
+      font-size: 20px;
+      color: #334155;
+    }
+    .card {
+      border: 1px solid #e2e8f0;
+      border-radius: 24px;
+      padding: 32px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+    }
+    .note {
+      margin: 28px 0;
+      padding: 24px;
+      border-radius: 20px;
+      background: linear-gradient(to right, #eff6ff, #ecfdf3);
+      border: 1px solid #cbd5e1;
+    }
+    .grid {
+      display: grid;
+      gap: 16px;
+    }
+    .mini-card {
+      border: 1px solid #e2e8f0;
+      border-radius: 18px;
+      padding: 20px;
+      background: #f8fafc;
+    }
+    .mini-card h3 {
+      margin-top: 0;
+      font-size: 20px;
+    }
+    .btn {
+      display: inline-block;
+      margin-top: 16px;
+      background: #10b981;
+      color: white;
+      text-decoration: none;
+      padding: 14px 22px;
+      border-radius: 16px;
+      font-weight: 600;
+    }
+    .btn:hover {
+      background: #059669;
+    }
+    .btn-secondary {
+      display: inline-block;
+      margin-top: 16px;
+      margin-left: 10px;
+      border: 1px solid #cbd5e1;
+      color: #0f172a;
+      text-decoration: none;
+      padding: 14px 22px;
+      border-radius: 16px;
+      font-weight: 600;
+      background: white;
+    }
+    .btn-secondary:hover {
+      background: #f8fafc;
+    }
+    .cta {
+      margin-top: 40px;
+      border-radius: 24px;
+      padding: 32px;
+      color: white;
+      background: linear-gradient(135deg, #0f172a, #164e63, #166534);
+    }
+    .cta h2 {
+      margin-top: 0;
+      color: white;
+    }
+    .cta p {
+      color: #dbeafe;
+    }
+    .links {
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid #e2e8f0;
+    }
+    .links ul {
+      padding-left: 20px;
+    }
+    .footer {
+      border-top: 1px solid #e2e8f0;
+      padding: 40px 0;
+      text-align: center;
+    }
+    .footer .logo {
+      height: 56px;
+    }
+    .footer-copy {
+      margin-top: 16px;
+      font-size: 13px;
+      color: #64748b;
+    }
+    @media (min-width: 760px) {
+      .grid.two {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+    @media (max-width: 640px) {
+      h1 {
+        font-size: 32px;
+      }
+      h2 {
+        font-size: 24px;
+      }
+      .card, .cta {
+        padding: 24px;
+      }
+      .btn-secondary {
+        margin-left: 0;
+      }
+    }
+  </style>
 </head>
-
-
 <body>
+  <header class="topbar">
+    <div class="container">
+      <div class="header-inner">
+        <a href="/">
+          <img src="../bioclean-logo.png" alt="BioClean Workwear" class="logo" />
+        </a>
+        <div class="tagline">Учет спецодежды и СИЗ без Excel</div>
+      </div>
+    </div>
+    <div class="topbar-line"></div>
+  </header>
 
-<h1>Учет спецодежды на предприятии</h1>
+  <main class="container article">
+    <div class="breadcrumbs">
+      <a href="/">Главная</a> / <span>Учет спецодежды</span>
+    </div>
 
-<p>Учет спецодежды — важная часть системы охраны труда. Работодатель обязан обеспечивать сотрудников средствами индивидуальной защиты и контролировать сроки эксплуатации.</p>
+    <h1>Учет спецодежды на предприятии</h1>
 
-<h2>Что входит в учет спецодежды</h2>
+    <div class="card">
+      <p class="lead">
+        Учет спецодежды нужен не только для отчетности. Он помогает понимать,
+        кому и что уже выдано, когда подходит срок замены, какие размеры нужны
+        сотрудникам и чего не хватает на складе перед следующей закупкой.
+      </p>
 
-<ul>
-<li>каталог спецодежды</li>
-<li>учет выдачи сотрудникам</li>
-<li>контроль сроков эксплуатации</li>
-<li>учет складских остатков</li>
-<li>отчетность</li>
-</ul>
+      <h2>Что входит в учет спецодежды</h2>
+      <p>
+        На практике учет спецодежды объединяет несколько связанных процессов:
+        справочник сотрудников, нормы выдачи, складские остатки, историю выдачи
+        и контроль сроков эксплуатации. Если хотя бы одна часть ведется отдельно,
+        быстро появляются расхождения: в таблице срок уже прошел, на складе
+        позиция не списана, а сотруднику нужно оформлять новую выдачу.
+      </p>
 
-<p>Современные компании используют специализированные программы учета спецодежды, чтобы автоматизировать процессы и снизить количество ошибок.</p>
+      <div class="note">
+        <h2 style="margin-top:0;">Минимальный набор данных</h2>
+        <ul>
+          <li>сотрудник, подразделение и должность;</li>
+          <li>наименование спецодежды или СИЗ, размер и рост;</li>
+          <li>дата выдачи, количество и срок эксплуатации;</li>
+          <li>дата следующей замены и основание выдачи;</li>
+          <li>склад, остаток, возврат, списание или перемещение.</li>
+        </ul>
+      </div>
 
-<div style="margin-top:50px">
+      <h2>Где чаще всего появляются ошибки</h2>
+      <p>
+        Самая частая проблема — учет в нескольких Excel-файлах. Один файл
+        хранит сотрудников, второй — склад, третий — выдачу, а сроки замены
+        считаются вручную. При изменении должности, подразделения или нормы
+        приходится проверять сразу несколько мест. Из-за этого легко пропустить
+        выдачу, заказать лишнее или не заметить, что нужного размера нет на
+        складе.
+      </p>
 
-<h3>Полезные статьи по учету спецодежды</h3>
+      <div class="grid two">
+        <div class="mini-card">
+          <h3>Для охраны труда</h3>
+          <p>
+            Важно видеть, какие позиции положены сотруднику по нормам, что уже
+            выдано и когда нужно заменить комплект.
+          </p>
+        </div>
+        <div class="mini-card">
+          <h3>Для склада</h3>
+          <p>
+            Нужны актуальные остатки, движения по складу, списания и понимание,
+            какие размеры скоро потребуются.
+          </p>
+        </div>
+      </div>
 
-<ul>
+      <h2>Как программа упрощает учет</h2>
+      <p>
+        В программе данные хранятся в одной системе. Карточка сотрудника
+        показывает историю выдачи, нормы, размеры и сроки эксплуатации. При
+        выдаче система уменьшает складской остаток, а по срокам помогает заранее
+        увидеть будущую потребность. Это особенно важно для предприятий, где
+        выдача идет регулярно, а закупки нужно планировать заранее.
+      </p>
 
-<li>
-<a href="programma-ucheta-specodezhdy.html">
-Программа учета спецодежды
-</a>
-</li>
+      <h2>Чеклист для перехода от таблиц к системе</h2>
+      <ul>
+        <li>соберите актуальный список сотрудников и подразделений;</li>
+        <li>проверьте справочник спецодежды, размеры и единицы учета;</li>
+        <li>перенесите нормы выдачи по должностям или видам работ;</li>
+        <li>загрузите текущие складские остатки;</li>
+        <li>проверьте первые отчеты по срокам замены и будущим закупкам.</li>
+      </ul>
 
-<li>
-<a href="uchet-specodezhdy-na-predpriyatii.html">
-Как вести учет спецодежды на предприятии
-</a>
-</li>
+      <h2>FAQ по учету спецодежды</h2>
+      <h3>Можно ли начать с Excel?</h3>
+      <p>
+        Да, если сотрудников немного и учет ведет один человек. Но при росте
+        компании Excel начинает требовать много ручной проверки.
+      </p>
+      <h3>Что важнее: выдача или склад?</h3>
+      <p>
+        Эти процессы лучше вести вместе. Выдача без склада не показывает
+        реальный остаток, а склад без истории выдачи не помогает контролировать
+        сроки эксплуатации.
+      </p>
+      <h3>Нужны ли нормы выдачи в системе?</h3>
+      <p>
+        Да. Нормы помогают понимать, что положено сотруднику, когда истекает
+        срок эксплуатации и какие позиции нужно включить в план закупок.
+      </p>
+    </div>
 
-<li>
-<a href="programma-ucheta-siz.html">
-Программа учета СИЗ
-</a>
-</li>
+    <section class="cta">
+      <h2>Хотите увидеть учет спецодежды на ваших данных?</h2>
+      <p>
+        Покажем выдачу, нормы, сроки эксплуатации, складские остатки и план
+        закупок на примере вашей структуры.
+      </p>
+      <a class="btn" href="/#demo">Запросить демо</a>
+      <a class="btn-secondary" href="/#contacts">Связаться с нами</a>
+    </section>
 
-<li>
-<a href="uchet-siz.html">
-Учет СИЗ на предприятии
-</a>
-</li>
+    <div class="links">
+      <h3>Полезные статьи по учету спецодежды</h3>
+      <ul>
+        <li><a href="/articles/programma-ucheta-specodezhdy.html">Программа учета спецодежды</a></li>
+        <li><a href="/articles/uchet-specodezhdy-na-predpriyatii.html">Как вести учет спецодежды на предприятии</a></li>
+        <li><a href="/articles/programma-ucheta-siz.html">Программа учета СИЗ</a></li>
+        <li><a href="/articles/uchet-siz.html">Учет СИЗ на предприятии</a></li>
+        <li><a href="/articles/zhurnal-vydachi-specodezhdy.html">Журнал выдачи спецодежды</a></li>
+        <li><a href="/articles/zhurnal-ucheta-siz.html">Журнал учета СИЗ</a></li>
+        <li><a href="/articles/normy-vydachi-specodezhdy.html">Нормы выдачи спецодежды</a></li>
+        <li><a href="/articles/sroki-ekspluatacii-specodezhdy.html">Сроки эксплуатации спецодежды</a></li>
+        <li><a href="/articles/uchet-siz-excel.html">Учет СИЗ в Excel</a></li>
+        <li><a href="/articles/excel-dlya-ucheta-specodezhdy-skachat.html">Excel для учета спецодежды — шаблон скачать бесплатно</a></li>
+      </ul>
 
-<li>
-<a href="zhurnal-vydachi-specodezhdy.html">
-Журнал выдачи спецодежды
-</a>
-</li>
+      <p>
+        Подробнее о решении читайте на странице
+        <a href="https://bioclean.ru/">программы учета спецодежды</a>.
+      </p>
+    </div>
+  </main>
 
-<li>
-<a href="zhurnal-ucheta-siz.html">
-Журнал учета СИЗ
-</a>
-</li>
-
-<li>
-<a href="normy-vydachi-specodezhdy.html">
-Нормы выдачи спецодежды
-</a>
-</li>
-
-<li>
-<a href="sroki-ekspluatacii-specodezhdy.html">
-Сроки эксплуатации спецодежды
-</a>
-</li>
-
-<li>
-<a href="uchet-siz-excel.html">
-Учет СИЗ в Excel
-</a>
-</li>
-
-<li>
-<a href="excel-dlya-ucheta-specodezhdy-skachat.html">
-Excel для учета спецодежды — шаблон скачать бесплатно
-</a>
-</li>
-
-</ul>
-
-<p>
-        Подробнее можно ознакомиться с
-        <a href="https://bioclean.ru/">решением для учета спецодежды</a>.
-</p>
-
-</div>
-
+  <footer class="footer">
+    <div class="container">
+      <img src="../bioclean-logo.png" alt="BioClean Workwear" class="logo" />
+      <div class="tagline">Учет спецодежды и СИЗ без Excel</div>
+      <div class="footer-copy">
+        © 2026 BioClean Workwear. Все права защищены.
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
