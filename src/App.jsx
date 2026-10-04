@@ -1,6 +1,6 @@
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import React, { useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { motion } from "framer-motion";
 import {
   Check,
@@ -125,6 +125,69 @@ function Modal({ open, onClose, title, children }) {
   );
 }
 
+function ScreenshotLightbox({ screen, onClose }) {
+  useEffect(() => {
+    if (!screen) return undefined;
+
+    function handleKeyDown(event) {
+      if (event.key === "Escape") onClose();
+    }
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [screen, onClose]);
+
+  if (!screen) return null;
+
+  return (
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/80 p-4 sm:p-6"
+      role="dialog"
+      aria-modal="true"
+      aria-label={`Увеличенный скриншот: ${screen.title}`}
+    >
+      <button
+        type="button"
+        className="absolute inset-0 cursor-zoom-out"
+        onClick={onClose}
+        aria-label="Закрыть просмотр скриншота"
+      />
+      <motion.div
+        initial={{ opacity: 0, y: 12, scale: 0.98 }}
+        animate={{ opacity: 1, y: 0, scale: 1 }}
+        className="relative w-full max-w-7xl overflow-hidden rounded-3xl border border-white/10 bg-white shadow-soft"
+      >
+        <div className="flex items-start justify-between gap-4 border-b border-slate-100 bg-white px-4 py-3 sm:px-5">
+          <div>
+            <div className="text-sm font-semibold text-slate-900 sm:text-base">
+              {screen.title}
+            </div>
+            {screen.text ? (
+              <div className="mt-1 text-xs text-slate-500 sm:text-sm">
+                {screen.text}
+              </div>
+            ) : null}
+          </div>
+          <button
+            type="button"
+            className="rounded-xl px-3 py-2 text-slate-600 hover:bg-slate-100"
+            onClick={onClose}
+            aria-label="Закрыть"
+          >
+            ✕
+          </button>
+        </div>
+        <div className="max-h-[82vh] overflow-auto bg-slate-50 p-2 sm:p-4">
+          <img
+            src={screen.image}
+            alt={screen.title}
+            className="mx-auto block h-auto w-full max-w-none rounded-2xl border border-slate-200 bg-white"
+          />
+        </div>
+      </motion.div>
+    </div>
+  );
+}
 function Stat({ label, value }) {
   return (
     <div className="rounded-3xl border border-slate-100 bg-white shadow-soft p-5">
@@ -218,6 +281,7 @@ export function Home() {
   }
 
   const [demoOpen, setDemoOpen] = useState(false);
+  const [lightboxScreen, setLightboxScreen] = useState(null);
 
   const nav = useMemo(
     () => [
@@ -269,7 +333,7 @@ export function Home() {
       {
         icon: ShieldCheck,
         title: "Учет СИЗ",
-        text: "Ведите учет СИЗ вместе со спецодеждой: единая логика, единые отчеты, меньше ручной работы.",
+        text: "Ведите учет СИЗ вместе со спецодеждой: дашборд показывает просрочки, ближайшие замены и нехватку по нормам.",
       },
     ],
     [],
@@ -287,6 +351,11 @@ export function Home() {
 
   const interfaceScreens = useMemo(
     () => [
+      {
+        title: "Контроль СИЗ",
+        text: "Дашборд показывает просрочки, ближайшие замены и сотрудников, которым не выдано по норме.",
+        image: "/screenshots/control-siz-dashboard.png",
+      },
       {
         title: "Каталог одежды",
         text: "Справочник позиций с типами, размерами и быстрым доступом к редактированию.",
@@ -574,11 +643,24 @@ export function Home() {
                   </div>
                 </div>
 
-                <img
-                  src="/screenshots/order-report.png"
-                  alt="Отчет для заказа спецодежды"
-                  className="w-full h-auto block"
-                />
+                <button
+                  type="button"
+                  className="group block w-full cursor-zoom-in text-left"
+                  onClick={() =>
+                    setLightboxScreen({
+                      title: "Контроль СИЗ",
+                      text: "Дашборд показывает просрочки, ближайшие замены, фильтры и нехватку по нормам.",
+                      image: "/screenshots/control-siz-dashboard.png",
+                    })
+                  }
+                  aria-label="Увеличить скриншот: дашборд контроля СИЗ"
+                >
+                  <img
+                    src="/screenshots/control-siz-dashboard.png"
+                    alt="Дашборд контроля СИЗ"
+                    className="w-full h-auto block transition duration-200 group-hover:scale-[1.01]"
+                  />
+                </button>
               </div>
 
               <div className="mt-4 grid grid-cols-2 gap-3">
@@ -767,7 +849,7 @@ export function Home() {
           <SectionTitle
             eyebrow="Интерфейсы"
             title="Больше реальных экранов системы"
-            subtitle="Показываем не абстрактные карточки, а рабочие разделы: каталог, нормы выдачи, должности, склад и отчет для заказа."
+            subtitle="Показываем не абстрактные карточки, а рабочие разделы: контроль СИЗ, каталог, нормы выдачи, склад и отчет для заказа."
           />
 
           <div className="mt-10 grid lg:grid-cols-3 gap-5">
@@ -789,12 +871,19 @@ export function Home() {
                   </div>
                 </div>
                 <div className="bg-white p-2">
-                  <img
-                    src={screen.image}
-                    alt={screen.title}
-                    className="block w-full rounded-xl border border-slate-100"
-                    loading="lazy"
-                  />
+                  <button
+                    type="button"
+                    className="group block w-full cursor-zoom-in text-left"
+                    onClick={() => setLightboxScreen(screen)}
+                    aria-label={`Увеличить скриншот: ${screen.title}`}
+                  >
+                    <img
+                      src={screen.image}
+                      alt={screen.title}
+                      className="block w-full rounded-xl border border-slate-100 transition duration-200 group-hover:scale-[1.01]"
+                      loading="lazy"
+                    />
+                  </button>
                 </div>
               </Card>
             ))}
@@ -1334,6 +1423,11 @@ export function Home() {
             </div>
           </div>
 
+      <ScreenshotLightbox
+        screen={lightboxScreen}
+        onClose={() => setLightboxScreen(null)}
+      />
+
       {/* DEMO MODAL */}
       <Modal
         open={demoOpen}
@@ -1429,4 +1523,9 @@ export default function App() {
     </HelmetProvider>
   );
 }
+
+
+
+
+
 

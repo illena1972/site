@@ -1,113 +1,113 @@
 <!doctype html>
 <html lang="ru">
 <head>
-<meta charset="UTF-8">
-<title>Учет СИЗ в Excel</title>
-<meta name="description" content="Excel часто используется для учета СИЗ, но при большом количестве сотрудников он становится неудобным.">
-<link rel="canonical" href="https://bioclean.ru/articles/uchet-siz-excel.html">
-<link rel="icon" href="/favicon.ico" sizes="any">
-    <link rel="icon" type="image/png" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" href="/favicon-64x64.png" sizes="64x64">
-    <link rel="icon" type="image/png" href="/favicon-16x16.png">
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<script type="application/ld+json">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Учет СИЗ в Excel: шаблон, сроки и ограничения</title>
+  <meta name="description" content="Как вести учет СИЗ в Excel: какие поля добавить, где возникают ошибки, когда таблицы уже недостаточно и как перейти на программу учета." />
+  <meta name="keywords" content="учет СИЗ в Excel, таблица учета СИЗ, журнал СИЗ Excel, сроки эксплуатации СИЗ Excel" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://bioclean.ru/articles/uchet-siz-excel.html" />
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" href="/favicon-64x64.png" sizes="64x64">
+  <link rel="icon" type="image/png" href="/favicon-16x16.png">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
-{
-"@context":"https://schema.org",
-"@type":"Article",
-"headline":"Программа учета спецодежды",
-"description":"Программа учета спецодежды для предприятий",
-"author":{
-"@type":"Organization",
-"name":"BioClean Workwear"
-},
-"publisher":{
-"@type":"Organization",
-"name":"BioClean Workwear"
-}
-}
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Article",
+    "headline":"Учет СИЗ в Excel: шаблон, сроки и ограничения",
+    "description":"Практическая статья о том, как вести учет СИЗ в Excel, какие поля нужны в таблице и когда лучше перейти на автоматизированную систему.",
+    "mainEntityOfPage":"https://bioclean.ru/articles/uchet-siz-excel.html",
+    "author":{"@type":"Organization","name":"BioClean Workwear"},
+    "publisher":{"@type":"Organization","name":"BioClean Workwear"}
+  }
+  </script>
 
-</script>
+  <style>
+    body{margin:0;font-family:Arial,sans-serif;color:#0f172a;background:#fff;line-height:1.7}.topbar{border-bottom:1px solid #e2e8f0;background:#fff}.topbar-line{height:2px;background:linear-gradient(to right,#2563eb,#10b981,#2563eb)}.container{max-width:900px;margin:0 auto;padding:0 20px}.header-inner{padding:20px 0;text-align:center}.logo{height:64px;width:auto}.tagline{margin-top:8px;font-size:13px;color:#64748b}.breadcrumbs{margin-top:24px;font-size:14px;color:#64748b}.breadcrumbs a{color:#64748b;text-decoration:none}.breadcrumbs a:hover{text-decoration:underline}h1{font-size:40px;line-height:1.15;margin:20px 0 16px}h2{font-size:28px;margin:40px 0 16px}h3{font-size:22px;margin:28px 0 12px}p,li{font-size:18px;color:#334155}.article{padding:40px 0 60px}.lead{font-size:20px;color:#334155}.card{border:1px solid #e2e8f0;border-radius:24px;padding:32px;box-shadow:0 10px 30px rgba(0,0,0,.06)}.note{margin:28px 0;padding:24px;border-radius:20px;background:linear-gradient(to right,#eff6ff,#ecfdf3);border:1px solid #cbd5e1}.grid{display:grid;gap:16px}.mini-card{border:1px solid #e2e8f0;border-radius:18px;padding:20px;background:#f8fafc}.mini-card h3{margin-top:0;font-size:20px}.btn{display:inline-block;margin-top:16px;background:#10b981;color:white;text-decoration:none;padding:14px 22px;border-radius:16px;font-weight:600}.btn:hover{background:#059669}.btn-secondary{display:inline-block;margin-top:16px;margin-left:10px;border:1px solid #cbd5e1;color:#0f172a;text-decoration:none;padding:14px 22px;border-radius:16px;font-weight:600;background:white}.btn-secondary:hover{background:#f8fafc}.cta{margin-top:40px;border-radius:24px;padding:32px;color:white;background:linear-gradient(135deg,#0f172a,#164e63,#166534)}.cta h2{margin-top:0;color:white}.cta p{color:#dbeafe}.links{margin-top:40px;padding-top:20px;border-top:1px solid #e2e8f0}.links ul{padding-left:20px}.footer{border-top:1px solid #e2e8f0;padding:40px 0;text-align:center}.footer .logo{height:56px}.footer-copy{margin-top:16px;font-size:13px;color:#64748b}@media (min-width:760px){.grid.two{grid-template-columns:repeat(2,minmax(0,1fr))}}@media (max-width:640px){h1{font-size:32px}h2{font-size:24px}.card,.cta{padding:24px}.btn-secondary{margin-left:0}}
+  </style>
 </head>
-
 <body>
-<h1>Учет СИЗ в Excel</h1>
-<p>Excel часто используется для учета СИЗ, но при большом количестве сотрудников он становится неудобным.</p>
+  <header class="topbar">
+    <div class="container"><div class="header-inner"><a href="/"><img src="../bioclean-logo.png" alt="BioClean Workwear" class="logo" /></a><div class="tagline">Учет спецодежды и СИЗ без Excel</div></div></div>
+    <div class="topbar-line"></div>
+  </header>
 
-<div style="margin-top:50px">
+  <main class="container article">
+    <div class="breadcrumbs"><a href="/">Главная</a> / <span>Учет СИЗ в Excel</span></div>
+    <h1>Учет СИЗ в Excel</h1>
 
-<h3>Полезные статьи по учету спецодежды</h3>
+    <div class="card">
+      <p class="lead">Учет СИЗ в Excel часто становится первым шагом: таблица понятна, быстро запускается и не требует внедрения системы. Но чем больше сотрудников, норм выдачи и сроков эксплуатации, тем сложнее поддерживать Excel без ошибок.</p>
 
-<ul>
+      <h2>Когда Excel подходит для учета СИЗ</h2>
+      <p>Excel можно использовать на небольшом предприятии, если выдача происходит редко, сотрудников немного, а учет ведет один ответственный человек. Таблица помогает собрать базовые данные: сотрудников, виды СИЗ, даты выдачи, сроки эксплуатации и примечания.</p>
+      <div class="note">
+        <h2 style="margin-top:0;">Какие колонки стоит добавить</h2>
+        <ul>
+          <li>сотрудник, подразделение и должность;</li>
+          <li>наименование СИЗ и характеристика позиции;</li>
+          <li>дата выдачи и количество;</li>
+          <li>срок эксплуатации и дата следующей замены;</li>
+          <li>основание выдачи или норма;</li>
+          <li>возврат, списание, досрочная замена;</li>
+          <li>остаток на складе или потребность к заказу.</li>
+        </ul>
+      </div>
 
-<li>
-<a href="programma-ucheta-specodezhdy.html">
-Программа учета спецодежды
-</a>
-</li>
+      <h2>Где Excel начинает мешать</h2>
+      <p>Главная проблема Excel — ручная синхронизация. Нормы могут храниться в одном файле, склад в другом, а история выдачи в третьем. При изменении должности, досрочной замене или новой поставке приходится обновлять несколько таблиц. Ошибки обычно появляются не сразу, а в момент проверки или срочной выдачи.</p>
 
-<li>
-<a href="uchet-specodezhdy.html">
-Учет спецодежды на предприятии
-</a>
-</li>
+      <div class="grid two">
+        <div class="mini-card"><h3>Сроки эксплуатации</h3><p>Формулы легко сбить ручной правкой, особенно если есть досрочные замены или разные сроки по позициям.</p></div>
+        <div class="mini-card"><h3>Склад и закупки</h3><p>Без связи с остатками сложно понять, каких СИЗ не хватает сейчас и что потребуется в ближайший период.</p></div>
+      </div>
 
-<li>
-<a href="programma-ucheta-siz.html">
-Программа учета СИЗ
-</a>
-</li>
+      <h2>Как перейти от Excel к системе учета</h2>
+      <p>Excel не обязательно выбрасывать. Его можно использовать как подготовительный формат: привести справочники к единому виду, убрать дубли, проверить остатки и выгрузить актуальную историю выдачи. После этого данные проще перенести в программу учета СИЗ.</p>
 
-<li>
-<a href="uchet-siz.html">
-Учет СИЗ на предприятии
-</a>
-</li>
+      <h2>Что дает программа вместо таблицы</h2>
+      <p>Программа связывает сотрудников, нормы выдачи, сроки эксплуатации и складские остатки. Дашборд показывает просроченные позиции, ближайшие замены и сотрудников, которым не выдано по норме. Это экономит время и снижает риск ручных ошибок.</p>
 
-<li>
-<a href="zhurnal-vydachi-specodezhdy.html">
-Журнал выдачи спецодежды
-</a>
-</li>
+      <h2>FAQ по учету СИЗ в Excel</h2>
+      <h3>Можно ли начать учет СИЗ с Excel?</h3>
+      <p>Да. Для старта Excel подходит, если объем данных небольшой и процесс простой.</p>
+      <h3>Какая самая частая ошибка в таблицах?</h3>
+      <p>Разные версии файлов и ручные изменения дат, из-за которых сроки эксплуатации перестают считаться корректно.</p>
+      <h3>Когда пора переходить на программу?</h3>
+      <p>Когда появляются регулярные выдачи, несколько ответственных, складские остатки, нормы по должностям и потребность в отчетах.</p>
+    </div>
 
-<li>
-<a href="zhurnal-ucheta-siz.html">
-Журнал учета СИЗ
-</a>
-</li>
+    <section class="cta">
+      <h2>Excel уже стал неудобным?</h2>
+      <p>Покажем, как перенести учет СИЗ из таблиц в BioClean Workwear и получить контроль сроков, норм и склада.</p>
+      <a class="btn" href="/#demo">Запросить демо</a>
+      <a class="btn-secondary" href="/#contacts">Связаться с нами</a>
+    </section>
 
-<li>
-<a href="normy-vydachi-specodezhdy.html">
-Нормы выдачи спецодежды
-</a>
-</li>
+    <div class="links">
+      <h3>Полезные статьи по учету спецодежды и СИЗ</h3>
+      <ul>
+        <li><a href="/articles/programma-ucheta-specodezhdy.html">Программа учета спецодежды</a></li>
+        <li><a href="/articles/uchet-specodezhdy.html">Учет спецодежды на предприятии</a></li>
+        <li><a href="/articles/programma-ucheta-siz.html">Программа учета СИЗ</a></li>
+        <li><a href="/articles/uchet-siz.html">Учет СИЗ на предприятии</a></li>
+        <li><a href="/articles/uchet-specodezhdy-na-predpriyatii.html">Как вести учет спецодежды на предприятии</a></li>
+        <li><a href="/articles/uchet-siz-excel.html">Учет СИЗ в Excel</a></li>
+        <li><a href="/articles/zhurnal-vydachi-specodezhdy.html">Журнал выдачи спецодежды</a></li>
+        <li><a href="/articles/zhurnal-ucheta-siz.html">Журнал учета СИЗ</a></li>
+        <li><a href="/articles/normy-vydachi-specodezhdy.html">Нормы выдачи спецодежды</a></li>
+        <li><a href="/articles/sroki-ekspluatacii-specodezhdy.html">Сроки эксплуатации спецодежды</a></li>
+        <li><a href="/articles/excel-dlya-ucheta-specodezhdy-skachat.html">Excel для учета спецодежды — шаблон скачать бесплатно</a></li>
+      </ul>
+      <p>Подробнее о решении читайте на странице <a href="https://bioclean.ru/">программы учета спецодежды и СИЗ</a>.</p>
+    </div>
+  </main>
 
-<li>
-<a href="sroki-ekspluatacii-specodezhdy.html">
-Сроки эксплуатации спецодежды
-</a>
-</li>
-
-<li>
-<a href="uchet-specodezhdy-na-predpriyatii.html">
-Как вести учет спецодежды на предприятии
-</a>
-</li>
-
-<li>
-<a href="excel-dlya-ucheta-specodezhdy-skachat.html">
-Excel для учета спецодежды — шаблон скачать бесплатно
-</a>
-</li>
-
-</ul>
-
-
-<p>
-        Подробнее о решении читайте на странице
-        <a href="https://bioclean.ru/">об учете спецодежды на предприятии</a>.
-</p>
-</div>
+  <footer class="footer"><div class="container"><img src="../bioclean-logo.png" alt="BioClean Workwear" class="logo" /><div class="tagline">Учет спецодежды и СИЗ без Excel</div><div class="footer-copy">© 2026 BioClean Workwear. Все права защищены.</div></div></footer>
 </body>
 </html>
