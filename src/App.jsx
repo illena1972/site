@@ -488,8 +488,8 @@ export function Home() {
     <div className="min-h-screen">
       {/* Top bar */}
       <div className="sticky top-0 z-40 border-b border-slate-100 bg-white/80 backdrop-blur">
-        <Container>
-          <div className="flex h-20 items-center justify-between">
+        <Container className="max-w-[1500px]">
+          <div className="flex min-h-20 items-center justify-center gap-4 py-3 md:justify-between">
             <div className="flex flex-col items-center leading-tight shrink-0">
               <img
                 src={BRAND.logo}
@@ -500,38 +500,44 @@ export function Home() {
               <div className="text-xs text-slate-500 text-center ml-1">
                 {BRAND.tagline}
               </div>
+              <a
+                href={BRAND.phoneHref}
+                className="mt-1 whitespace-nowrap text-sm font-semibold text-slate-900 hover:text-emerald-700 md:hidden"
+              >
+                {BRAND.phone}
+              </a>
             </div>
 
-            <div className="hidden lg:flex items-center gap-4 text-sm text-slate-700">
+            <div className="hidden xl:flex min-w-0 flex-1 items-center justify-center gap-4 text-[15px] text-slate-700">
               {nav.map((n) => (
                 <SmoothLink
                   key={n.href}
                   href={n.href}
-                  className="hover:text-slate-900"
+                  className={`whitespace-nowrap hover:text-slate-900 ${["#roi", "#faq"].includes(n.href) ? "hidden [@media(min-width:1920px)]:inline" : ""}`}
                 >
                   {n.label}
                 </SmoothLink>
               ))}
             </div>
 
-            <div className="flex items-center gap-4">
-              <div className="hidden 2xl:flex flex-col items-end leading-tight">
+            <div className="hidden shrink-0 items-center gap-3 md:flex">
+              <div className="hidden [@media(min-width:1440px)]:flex flex-col items-end leading-tight">
                 <a
                   href={BRAND.phoneHref}
-                  className="text-sm font-semibold text-slate-900 hover:text-emerald-700"
+                  className="whitespace-nowrap text-sm font-semibold text-slate-900 hover:text-emerald-700"
                 >
                   {BRAND.phone}
                 </a>
                 <a
                   href={`mailto:${BRAND.email}`}
-                  className="mt-1 text-xs text-slate-500 hover:text-slate-800"
+                  className="mt-1 whitespace-nowrap text-xs text-slate-500 hover:text-slate-800"
                 >
                   {BRAND.email}
                 </a>
               </div>
               <Button
                 size="md"
-                className="bg-emerald-600 hover:bg-emerald-700 active:bg-emerald-800"
+                className="hidden shrink-0 whitespace-nowrap px-5 bg-emerald-600 hover:bg-emerald-700 active:bg-emerald-800 md:inline-flex"
                 onClick={() => setDemoOpen(true)}
               >
                 Запросить демо <ArrowRight size={16} />
@@ -596,7 +602,7 @@ export function Home() {
               <div className="mt-6 flex flex-col sm:flex-row gap-3">
                 <Button
                   size="lg"
-                  className="bg-emerald-600 hover:bg-emerald-700 active:bg-emerald-800"
+                  className="shrink-0 whitespace-nowrap px-5 bg-emerald-600 hover:bg-emerald-700 active:bg-emerald-800"
                   onClick={() => setDemoOpen(true)}
                 >
                   Запросить демо
@@ -1523,6 +1529,16 @@ export default function App() {
     </HelmetProvider>
   );
 }
+
+
+
+
+
+
+
+
+
+
 
 
 
